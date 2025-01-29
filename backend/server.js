@@ -47,6 +47,14 @@ db.connect((err) => {
 app.use(express.static(path.join(__dirname, "..", "dist")));
 
 // Defining API endpoint to fetch products from DB
+app.get("/", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
+});
+
+app.get("/catalog", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
+});
+
 app.get("/catalog", (req, res) => {
   res.send(path.join(__dirname, "index.html"));
 });
@@ -59,6 +67,22 @@ app.get("/api/catalog", (req, res) => {
       res.send(results);
     }
   });
+});
+
+app.get("/refund-policy", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
+});
+
+app.get("/signin", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
+});
+
+app.get("/register", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
+});
+
+app.get("/cart", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
 });
 
 app.get("*", (req, res) => {
