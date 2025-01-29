@@ -51,7 +51,7 @@ app.get("*", (req, res) => {
   res.send(path.join(__dirname, "index.html"));
 });
 
-app.get("/api/products", (req, res) => {
+app.get("/products", (req, res) => {
   db.query("SELECT * FROM new_products", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
