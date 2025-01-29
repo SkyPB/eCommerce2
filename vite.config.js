@@ -7,5 +7,6 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     port: 5173,
+    allowedHosts: ["ecommerce2-k6lk.onrender.com"],
   },
 });
