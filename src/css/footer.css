@@ -1,0 +1,82 @@
+.footer-container {
+  font-family: serif;
+  font-size: 14px;
+  border: 1px solid black;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-container p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.footer-container input[type="email"] {
+  padding: 10px;
+  margin: 10px 5px 0 0;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.footer-container button {
+  padding: 10px 15px;
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-container button:hover {
+  background-color: beige;
+}
+
+/* Social Media Section */
+
+.footer-container {
+  background-color: black;
+}
+.footer-container h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-container li {
+  margin-bottom: 5px;
+}
+
+.footer-container a {
+  text-decoration: none;
+  color: #e86c73;
+  transition: color 0.3s;
+}
+
+.footer-container a:hover {
+  color: #fff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}

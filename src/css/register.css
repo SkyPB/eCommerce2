@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f7f7f7;
+  font-family: "Georgia", serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+#register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h2:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #333;
+  margin: 10px auto;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+input:focus {
+  border-color: #333;
+  outline: none;
+}
+
+.create {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create:hover {
+  background-color: #555;
+}
+
+.links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.links a {
+  display: block;
+  color: #333;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
