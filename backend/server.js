@@ -28,20 +28,20 @@ dotenv.config();
 
 // MySQL Configs.
 const db = mysql.createConnection({
-  host: "localhost" || 
-  user: "root",
-  password: "password",
-  database: "products_db",
+  host: process.env.DB_HOST
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Connect to MySQL
-db.connect((err) => {
-  if (err) {
-    console.error("Error connecting to MySQL:", err);
-  } else {
-    console.log("Connected to MySQL database");
-  }
-});
+// db.connect((err) => {
+//   if (err) {
+//     console.error("Error connecting to MySQL:", err);
+//   } else {
+//     console.log("Connected to MySQL database");
+//   }
+// });
 
 // Defining API endpoint to fetch products from DB
 app.get("/products", (req, res) => {
