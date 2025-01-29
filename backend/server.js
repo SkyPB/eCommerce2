@@ -36,13 +36,13 @@ const db = mysql.createConnection({
 });
 
 // Connect to MySQL
-// db.connect((err) => {
-//   if (err) {
-//     console.error("Error connecting to MySQL:", err);
-//   } else {
-//     console.log("Connected to MySQL database");
-//   }
-// });
+db.connect((err) => {
+  if (err) {
+    console.error("Error connecting to MySQL:", err);
+  } else {
+    console.log("Connected to MySQL database");
+  }
+});
 
 app.use(express.static(path.join(__dirname, "..", "dist")));
 
@@ -51,7 +51,7 @@ app.get("*", (req, res) => {
   res.send(path.join(__dirname, "index.html"));
 });
 
-app.get("/api/catalog", (req, res) => {
+app.get("/products", (req, res) => {
   db.query("SELECT * FROM new_products", (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
