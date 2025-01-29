@@ -47,7 +47,7 @@ db.connect((err) => {
 app.use(express.static(path.join(__dirname, "..", "dist")));
 
 // Defining API endpoint to fetch products from DB
-app.get("*", (req, res) => {
+app.get("/catalog", (req, res) => {
   res.send(path.join(__dirname, "index.html"));
 });
 
@@ -56,9 +56,13 @@ app.get("/api/catalog", (req, res) => {
     if (err) {
       res.status(500).json({ error: err.message });
     } else {
-      res.json(results);
+      res.send(results);
     }
   });
+});
+
+app.get("*", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
 });
 
 const port = process.env.PORT || 3000;
