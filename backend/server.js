@@ -2,13 +2,14 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 
 const app = express();
 
-const port = 5000;
-
 app.use(cors());
 dotenv.config();
+
+// serve static directory dist folder
 
 // Create a connection pool
 // const pool = mysql.createPool({
@@ -28,7 +29,7 @@ dotenv.config();
 
 // MySQL Configs.
 const db = mysql.createConnection({
-  host: process.env.DB_HOST
+  host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
@@ -43,7 +44,13 @@ const db = mysql.createConnection({
 //   }
 // });
 
+app.use(express.static(path.join(__dirname, "..", "dist")));
+
 // Defining API endpoint to fetch products from DB
+app.get("*", (req, res) => {
+  res.send(path.join(__dirname, "index.html"));
+});
+
 app.get("/products", (req, res) => {
   db.query("SELECT * FROM new_products", (err, results) => {
     if (err) {
@@ -54,6 +61,7 @@ app.get("/products", (req, res) => {
   });
 });
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
