@@ -10,7 +10,7 @@ export default function Catalog({ addToCart }) {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("/products");
+      const response = await fetch("api/catalog");
       const data = await response.json();
       setProducts(data);
       setFilteredProducts(data);
